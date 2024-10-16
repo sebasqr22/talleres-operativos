@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def leer(ruta):
-    with open(ruta, 'r') as file:  # 'r' indica que se abre en modo lectura
+    with open(ruta, 'r') as file: 
         contenido = file.read()
         contenido = contenido.split("\n")
         return contenido

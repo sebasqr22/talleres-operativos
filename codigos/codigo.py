@@ -29,12 +29,9 @@ def aplicar_filtro_en_hilo(objeto):
         global contador
         contador += 1
         imprimirContador()
-        # Puedes guardar la imagen si quieres
-        # imagen_filtrada.save(f"filtrada_{objeto.nombre}")
     except Exception as e:
         print(f"Error procesando {objeto.nombre}: {e}")
 
-# Crear más de 10000 objetos de la clase Imagen
 imagenes = [Imagen(f"./imagen_creada.png") for i in range(10001)]
 
 # Crear una lista para manejar hilos
@@ -49,11 +46,10 @@ for img in imagenes:
             hilo.join()    # Esperar a que los hilos terminen
         hilos.clear()       # Limpiar la lista de hilos una vez que han terminado
 
-# Asegurarse de que el último grupo de hilos también se ejecute
 for hilo in hilos:
     hilo.start()
 for hilo in hilos:
     hilo.join()
 
-# Print cuando todos los hilos hayan terminado
-print("Todos los hilos han terminado de procesar las imágenes.")
+
+print("Todos los hilos han terminado de procesar las imagenes")
